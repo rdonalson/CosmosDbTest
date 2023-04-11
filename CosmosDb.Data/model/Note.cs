@@ -2,15 +2,12 @@
 {
 	public class Note
 	{
-		public Note() => DateCreated = DateTime.Today;
-		public Note(DateTime dateCreated)
-		{
-			DateCreated = dateCreated;
-		}
+		public Note() => DateCreated = DateTime.Today.ToString();
+		public Note(DateTime dateCreated) => DateCreated = dateCreated.ToString();
 
 		public string Id { get; set; }
-		public DateTime DateCreated { get; set; }
+		public string DateCreated { get; set; }
 		public string? Text { get; set; }
-		public List<string>? Tags { get; set; }
+		public string? Tags { get; set; }
 	}
 }

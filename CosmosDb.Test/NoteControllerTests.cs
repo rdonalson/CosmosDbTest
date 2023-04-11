@@ -24,9 +24,9 @@ namespace CosmosDb.Test
 			// Arrange
 			var notes = new List<Note>
 		{
-			new Note { Id = Guid.NewGuid().ToString(), Text = "Note 1", Tags = new List<string> { "Tag 1", "Tag 2" } },
-			new Note { Id = Guid.NewGuid().ToString(), Text = "Note 2", Tags = new List<string> { "Tag 2", "Tag 3" } },
-			new Note { Id = Guid.NewGuid().ToString(), Text = "Note 3", Tags = new List<string> { "Tag 3", "Tag 4" } }
+			new Note { Id = Guid.NewGuid().ToString(), Text = "Note 1", Tags = "{ 'Tag 1', 'Tag 2' }" },
+			new Note { Id = Guid.NewGuid().ToString(), Text = "Note 2", Tags = "{ 'Tag 3', 'Tag 4' }" },
+			new Note { Id = Guid.NewGuid().ToString(), Text = "Note 3", Tags = "{ 'Tag 5', 'Tag 6' }" }
 		};
 			_noteRepositoryMock.Setup(repo => repo.GetNotes()).ReturnsAsync(notes);
 
@@ -44,7 +44,7 @@ namespace CosmosDb.Test
 		{
 			var id = Guid.NewGuid().ToString();
 			// Arrange
-			var note = new Note { Id = id, Text = "Note 1", Tags = new List<string> { "Tag 1", "Tag 2" } };
+			var note = new Note { Id = id, Text = "Note 1", Tags = "{ 'Tag 1', 'Tag 2' }" };
 			_noteRepositoryMock.Setup(repo => repo.GetNoteById("1")).ReturnsAsync(note);
 
 			// Act
@@ -61,8 +61,8 @@ namespace CosmosDb.Test
 		{
 			var id = Guid.NewGuid().ToString();
 			// Arrange
-			var noteToCreate = new Note { Text = "Note 1", Tags = new List<string> { "Tag 1", "Tag 2" } };
-			var createdNote = new Note { Id = id, Text = "Note 1", Tags = new List<string> { "Tag 1", "Tag 2" } };
+			var noteToCreate = new Note { Text = "Note 1", Tags = "{ 'Tag 1', 'Tag 2' }" };
+			var createdNote = new Note { Id = id, Text = "Note 1", Tags = "{ 'Tag 1', 'Tag 2' }" };
 			_noteRepositoryMock.Setup(repo => repo.CreateNote(noteToCreate)).ReturnsAsync(createdNote);
 
 			// Act
@@ -79,7 +79,7 @@ namespace CosmosDb.Test
 		{
 			var id = Guid.NewGuid().ToString();
 			// Arrange
-			var noteToUpdate = new Note { Id = id, Text = "Note 1 updated", Tags = new List<string> { "Tag 1 updated", "Tag 2 updated" } };
+			var noteToUpdate = new Note { Id = id, Text = "Note 1 updated", Tags = "{ 'Tag 1', 'Tag 2' }" };
 
 			// Act
 			await _notesController.UpdateNote("1", noteToUpdate);

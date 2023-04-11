@@ -1,7 +1,6 @@
 ﻿using CosmosDb.Data.model;
 using CosmosDb.Infrastructure.interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Web.Http.OData;
 
 namespace CosmosDb.API.Controllers
 {
@@ -17,7 +16,6 @@ namespace CosmosDb.API.Controllers
 		}
 
 		[HttpGet]
-		[EnableQuery()]
 		public async Task<IEnumerable<Note>> GetNotes()
 		{
 			return await _noteRepository.GetNotes();
