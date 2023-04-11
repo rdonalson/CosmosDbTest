@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDb.API", "CosmosDb.API\CosmosDb.API.csproj", "{16766A16-23D0-45BE-BA4B-A2FA925319E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1B5F03E-706B-46B2-A8C2-1AE2559F01DD}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDb.Infrastructure", "..\CosmosDb.Infrastructure\CosmosDb.Infrastructure.csproj", "{131C7178-22DE-491E-9719-100959B1CCE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16766A16-23D0-45BE-BA4B-A2FA925319E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16766A16-23D0-45BE-BA4B-A2FA925319E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16766A16-23D0-45BE-BA4B-A2FA925319E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16766A16-23D0-45BE-BA4B-A2FA925319E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{131C7178-22DE-491E-9719-100959B1CCE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131C7178-22DE-491E-9719-100959B1CCE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131C7178-22DE-491E-9719-100959B1CCE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131C7178-22DE-491E-9719-100959B1CCE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C5FB61F-2CB4-4095-A01F-15799518071A}
+	EndGlobalSection
+EndGlobal
