@@ -1,4 +1,3 @@
-
 using CosmosDb.Infrastructure.interfaces;
 using CosmosDb.Infrastructure.repositories;
 using Microsoft.Azure.Cosmos;
@@ -11,9 +10,15 @@ namespace CosmosDb.API
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
+			IConfiguration configuration = new ConfigurationBuilder()
+					.SetBasePath(Directory.GetCurrentDirectory())
+					.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+					.Build();
+
+			builder.Services.AddSingleton(configuration);
+
 			// Add services to the container.
 			builder.Services.AddControllers();
-
 			builder.Services.AddSingleton<CosmosClient>(sp =>
 			{
 				var connectionString = builder.Configuration.GetConnectionString("CosmosDbConnectionString");

@@ -36,7 +36,7 @@ namespace CosmosDb.Infrastructure.repositories
 
 		public async Task<Note> CreateNote(Note note)
 		{
-			note.Id = Guid.NewGuid();
+			note.Id = Guid.NewGuid().ToString();
 			note.DateCreated = DateTime.UtcNow;
 
 			var response = await _container.CreateItemAsync(note);
